@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View</title>
+</head>
+<body>
+<h2>Chi tiet san pham</h2>
+<a th:href="@{/products}">Back to productList</a>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Detail</th>
+    <th>Price</th>
+    <th>Day</th>
+
+  </tr>
+  <tr>
+    <td th:text="${product.id}"></td>
+    <td th:text="${product.name}"></td>
+    <td th:text="${product.detail}"></td>
+    <td th:text="${product.price}"></td>
+    <td th:text="${product.day}"></td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1>
+    Danh sach san pham
+</h1>
+<a th:href="@{/products/create}">Add new product</a>
+
+<form th:action="@{/products/search}" method="get">
+    <input type="search" name="keyword">
+    <input type="submit" value="search">
+
+</form>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Details</th>
+        <th>Price</th>
+        <th>Day</th>
+        <th>View</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    <tr th:each="row : ${listProduct}">
+        <td th:text="${row.id}"></td>
+        <td th:text="${row.name}"></td>
+        <td th:text="${row.detail}"></td>
+        <td th:text="${row.price}"></td>
+        <td th:text="${row.day}"></td>
+        <td><a th:href="@{/products/{id}/view(id=${row.id})}">view</a></td>
+        <td><a th:href="@{/products/{id}/delete(id=${row.id})}">delete</a></td>
+        <td><a th:href="@{/products/{id}/update(id=${row.id})}">update</a></td>
+    </tr>
+</table>
+</body>
+</html>

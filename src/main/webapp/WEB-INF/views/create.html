@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CreateForm</title>
+</head>
+<body>
+
+<a th:href="@{/products}">Back to productList</a>
+<form th:action="@{/products/save}" method="post" th:object="${product}">
+    <div>
+        <label>Name</label>
+        <input type="text" th:field="*{name}">
+    </div>
+    <div>
+        <label>Details</label>
+        <input type="text" th:field="*{detail}">
+    </div>
+    <div>
+        <label>Price</label>
+        <input type="text" th:field="*{price}">
+    </div>
+    <div>
+        <label>Day</label>
+        <input type="text" th:field="*{day}">
+    </div>
+    <input type="submit" value="add">
+
+
+</form>
+</body>
+</html>
